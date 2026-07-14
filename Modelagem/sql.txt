@@ -1,0 +1,29 @@
+create database sistema_gestor;
+
+use sistema_gestor;
+
+create table marca(
+id int auto_increment,
+nome varchar(50),
+primary key(id)
+);
+
+create table categoria(
+id int auto_increment,
+nome varchar(50),
+
+primary key(id)
+);
+
+create table produto(
+id int auto_increment,
+id_marca int,
+id_categoria int,
+descricao varchar(100),
+preco double(5,2),
+primary key(id),
+foreign key (id_marca) references marca(id),
+foreign key (id_categoria) references categoria(id)
+);
+
+desc produto;
